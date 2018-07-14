@@ -1,25 +1,24 @@
 package com.shape.app.undo;
 
 import com.shape.app.shape.ViewProperties;
-import com.shape.app.shape.views.ShapeView;
 
 /**
  * Holds information of last action for undoing the Last Action performed
  */
 public class Undo {
-    private ShapeView shapeView;
+    private String viewTag;
     private UndoActions lastActionPerformed;
     private ViewProperties viewProperties;
 
     public Undo() {
     }
 
-    public ShapeView getShapeView() {
-        return shapeView;
+    public String getViewTag() {
+        return viewTag;
     }
 
-    public void setShapeView(ShapeView shapeView) {
-        this.shapeView = shapeView;
+    public void setViewTag(String viewTag) {
+        this.viewTag = viewTag;
     }
 
     public ViewProperties getViewProperties() {
@@ -34,28 +33,28 @@ public class Undo {
         return lastActionPerformed;
     }
 
-    public void setLastActionPerformed(UndoActions lastActionPerformed) {
+    private void setLastActionPerformed(UndoActions lastActionPerformed) {
         this.lastActionPerformed = lastActionPerformed;
     }
 
     /**
      * Updates the Last Shape Object to perform Undo Actions
      *
-     * @param shapeView           Last ShapeView.
+     * @param viewProperties      Last ShapeView's View Properties.
      * @param lastActionPerformed Last action performed by the user.
      */
-    public void updateLastAction(ShapeView shapeView, UndoActions lastActionPerformed) {
+    public void updateLastAction(final ViewProperties viewProperties, final UndoActions lastActionPerformed) {
         setLastActionPerformed(lastActionPerformed);
-        setShapeView(shapeView);
-        setViewProperties(shapeView.getViewProperties());
+        setViewTag(viewProperties.getViewTag());
+        setViewProperties(viewProperties);
     }
 
     /**
      * This method checks if Undo is available
      *
-     * @return If ShapeView is available, this is returned as true. Otherwise, this is returned as false.
+     * @return If ShapeView Tag is available, this is returned as true. Otherwise, this is returned as false.
      */
     public boolean canUndo() {
-        return this.getShapeView() != null;
+        return this.getViewTag() != null;
     }
 }

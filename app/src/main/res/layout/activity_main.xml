@@ -12,7 +12,7 @@
 
         <variable
             name="onTapEvent"
-            type="com.shape.app.shape.OnTapEvents" />
+            type="com.shape.app.shape.OnLongTapEvent" />
 
     </data>
 
@@ -62,6 +62,7 @@
             style="@style/ShapeInputImage"
             android:layout_marginStart="32dp"
             android:contentDescription="@string/shape_square"
+            android:tag="@string/shape_square"
             app:color="@color/red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -71,6 +72,7 @@
             style="@style/ShapeInputImage"
             android:layout_marginStart="8dp"
             android:contentDescription="@string/shape_circle"
+            android:tag="@string/shape_circle"
             app:color="@color/green"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,41 +83,10 @@
             style="@style/ShapeInputImage"
             android:layout_marginEnd="32dp"
             android:contentDescription="@string/shape_triangle"
+            android:tag="@string/shape_triangle"
             app:color="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
-
-        <!--<com.peak.app.shape.views.SquareView
-        <ImageView
-            android:id="@+id/imageViewSquare"
-            style="@style/ShapeInputImage"
-            android:layout_marginStart="32dp"
-            android:contentDescription="@string/shape_square"
-            android:background="@color/red"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        &lt;!&ndash;<com.peak.app.shape.views.CircleView&ndash;&gt;
-        <ImageView
-            android:id="@+id/imageViewCircle"
-            style="@style/ShapeInputImage"
-            android:layout_marginStart="8dp"
-            android:contentDescription="@string/shape_circle"
-            android:background="@color/green"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        &lt;!&ndash;<com.peak.app.shape.views.TriangleView&ndash;&gt;
-        <ImageView
-            android:id="@+id/imageViewTriangle"
-            style="@style/ShapeInputImage"
-            android:layout_marginEnd="32dp"
-            android:contentDescription="@string/shape_triangle"
-            android:background="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />-->
 
     </android.support.constraint.ConstraintLayout>
 </layout>

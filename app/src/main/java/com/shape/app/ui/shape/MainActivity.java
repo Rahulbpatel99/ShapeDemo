@@ -6,10 +6,11 @@ import android.support.v4.content.ContextCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.shape.app.R;
 import com.shape.app.databinding.ActivityMainBinding;
-import com.shape.app.shape.OnTapEvents;
+import com.shape.app.shape.OnTapEvent;
 import com.shape.app.shape.ShapeType;
 import com.shape.app.shape.views.ShapeView;
 import com.shape.app.ui.BaseActivity;
@@ -17,7 +18,7 @@ import com.shape.app.ui.stats.StatsActivity;
 
 import java.util.HashMap;
 
-public class MainActivity extends BaseActivity implements OnTapEvents, UpdateEmptyView {
+public class MainActivity extends BaseActivity implements UpdateEmptyView, View.OnClickListener,OnTapEvent {
     public static final String EXTRA_DELETED_SHAPES = "extraDeletedShapes";
     private final int RESULT_UPDATE_SHAPES = 101;
     private ActivityMainBinding binding;
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity implements OnTapEvents, UpdateEmp
         viewModel.setShowEmptyView(true);
         viewModel.setShapeStatsMap(new HashMap<>());
         binding.setViewModel(viewModel);
+
     }
 
     @Override
@@ -46,9 +48,14 @@ public class MainActivity extends BaseActivity implements OnTapEvents, UpdateEmp
         shapeContainer.setUpdateEmptyView(this);
 
 
-        binding.imageViewSquare.setOnTapEvents(this);
-        binding.imageViewCircle.setOnTapEvents(this);
-        binding.imageViewTriangle.setOnTapEvents(this);
+        binding.imageViewSquare.setOnTapEvent(this);
+        binding.imageViewCircle.setOnTapEvent(this);
+        binding.imageViewTriangle.setOnTapEvent(this);
+
+
+//        binding.imageViewSquare.setOnClickListener(this);
+//        binding.imageViewCircle.setOnClickListener(this);
+//        binding.imageViewTriangle.setOnClickListener(this);
 
     }
 
@@ -134,28 +141,30 @@ public class MainActivity extends BaseActivity implements OnTapEvents, UpdateEmp
     /**
      * Handles onclick event of shape
      *
-     * @param shapeView
+     * @param tag
      */
-
     @Override
-    public void onTap(ShapeView shapeView) {
-        switch (shapeView.getId()) {
-            case R.id.imageViewSquare:
-                shapeContainer.addNewShape(ShapeType.SQUARE);
-                break;
-            case R.id.imageViewCircle:
-                shapeContainer.addNewShape(ShapeType.CIRCLE);
-                break;
-            case R.id.imageViewTriangle:
-                shapeContainer.addNewShape(ShapeType.TRIANGLE);
-                break;
+    public void onTap(String tag) {
+
+        if(tag.equals(getString(R.string.shape_square))){
+            shapeContainer.addNewShape(ShapeType.SQUARE);
+        }else if(tag.equals(getString(R.string.shape_circle))){
+            shapeContainer.addNewShape(ShapeType.CIRCLE);
+        }else if(tag.equals(getString(R.string.shape_triangle))){
+            shapeContainer.addNewShape(ShapeType.TRIANGLE);
         }
+//        switch (shapeView) {
+//            case getString(R.string.shape_square):
+//                break;
+//            case R.id.imageViewCircle:
+//                shapeContainer.addNewShape(ShapeType.CIRCLE);
+//                break;
+//            case R.id.imageViewTriangle:
+//                shapeContainer.addNewShape(ShapeType.TRIANGLE);
+//                break;
+//        }
     }
 
-    @Override
-    public void onLongTap(ShapeView shapeView) {
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -186,4 +195,19 @@ public class MainActivity extends BaseActivity implements OnTapEvents, UpdateEmp
         finish();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.imageViewSquare:
+                shapeContainer.addNewShape(ShapeType.SQUARE);
+                break;
+            case R.id.imageViewCircle:
+                shapeContainer.addNewShape(ShapeType.CIRCLE);
+                break;
+            case R.id.imageViewTriangle:
+                shapeContainer.addNewShape(ShapeType.TRIANGLE);
+                break;
+        }
+
+    }
 }

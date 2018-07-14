@@ -10,7 +10,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.shape.app.R;
-import com.shape.app.shape.OnTapEvents;
+import com.shape.app.shape.OnLongTapEvent;
+import com.shape.app.shape.OnTapEvent;
 import com.shape.app.shape.ShapeType;
 import com.shape.app.shape.ViewProperties;
 
@@ -18,8 +19,9 @@ import com.shape.app.shape.ViewProperties;
  * This class draws Shape Objects with respect to User Inputs.
  */
 
-public class ShapeView extends View implements View.OnClickListener, View.OnLongClickListener {
-    private OnTapEvents onTapEvents;
+public abstract class ShapeView extends View implements View.OnClickListener, View.OnLongClickListener {
+    private OnLongTapEvent onLongTapEvent;
+    private OnTapEvent onTapEvent;
     private Paint paint;
     private ViewProperties viewProperties;
 
@@ -123,12 +125,21 @@ public class ShapeView extends View implements View.OnClickListener, View.OnLong
     }
 
     /**
-     * This method is setter for @{@link OnTapEvents}.
+     * This method is setter for @{@link OnTapEvent}.
      *
-     * @param onTapEvents
+     * @param onTapEvent
      */
-    public void setOnTapEvents(OnTapEvents onTapEvents) {
-        this.onTapEvents = onTapEvents;
+    public void setOnTapEvent(OnTapEvent onTapEvent) {
+        this.onTapEvent = onTapEvent;
+    }
+
+    /**
+     * This method is setter for @{@link OnLongTapEvent}.
+     *
+     * @param onLongTapEvent
+     */
+    public void setOnLongTapEvent(OnLongTapEvent onLongTapEvent) {
+        this.onLongTapEvent = onLongTapEvent;
     }
 
     /**
@@ -146,8 +157,8 @@ public class ShapeView extends View implements View.OnClickListener, View.OnLong
      */
     @Override
     public void onClick(View v) {
-        if (this.onTapEvents != null)
-            this.onTapEvents.onTap(this);
+        if (this.onTapEvent != null)
+            this.onTapEvent.onTap(getTag().toString());
     }
 
     /**
@@ -158,8 +169,8 @@ public class ShapeView extends View implements View.OnClickListener, View.OnLong
      */
     @Override
     public boolean onLongClick(View v) {
-        if (this.onTapEvents != null)
-            this.onTapEvents.onLongTap(this);
+        if (this.onLongTapEvent != null)
+            this.onLongTapEvent.onLongTap(getTag().toString());
         return true;
     }
 
@@ -168,7 +179,8 @@ public class ShapeView extends View implements View.OnClickListener, View.OnLong
         super.onDetachedFromWindow();
         setOnClickListener(null);
         setOnLongClickListener(null);
-        this.onTapEvents = null;
+        this.onTapEvent = null;
+        this.onLongTapEvent = null;
         this.paint = null;
         this.viewProperties = null;
     }
