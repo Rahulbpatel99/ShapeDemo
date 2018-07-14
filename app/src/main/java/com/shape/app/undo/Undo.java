@@ -1,6 +1,6 @@
 package com.shape.app.undo;
 
-import com.shape.app.shape.ViewProperties;
+import com.shape.app.utils.ViewProperties;
 
 /**
  * Holds information of last action for undoing the Last Action performed

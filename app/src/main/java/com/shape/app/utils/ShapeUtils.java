@@ -1,12 +1,6 @@
 package com.shape.app.utils;
 
-import android.content.Context;
-import android.graphics.Color;
-
 import com.shape.app.shape.ShapeType;
-import com.shape.app.shape.ViewProperties;
-import com.shape.app.shape.views.ShapeFactory;
-import com.shape.app.shape.views.ShapeView;
 
 import java.util.Random;
 import java.util.UUID;

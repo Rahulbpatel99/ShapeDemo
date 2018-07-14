@@ -1,4 +1,4 @@
-package com.shape.app.ui.stats;
+package com.shape.app.stats.model;
 
 import android.databinding.BaseObservable;
 import android.databinding.ObservableArrayList;
@@ -6,6 +6,7 @@ import android.databinding.ObservableList;
 import android.graphics.drawable.Drawable;
 
 import com.shape.app.shape.ShapeType;
+import com.shape.app.stats.view.StatsActivity;
 
 import java.util.HashMap;
 

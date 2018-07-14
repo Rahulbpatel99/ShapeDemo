@@ -1,4 +1,4 @@
-package com.shape.app.ui.shape;
+package com.shape.app.shape.view;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -8,13 +8,15 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.shape.app.shape.OnLongTapEvent;
-import com.shape.app.shape.OnTapEvent;
+import com.shape.app.shape.listener.OnLongTapEvent;
+import com.shape.app.shape.listener.OnTapEvent;
 import com.shape.app.shape.ShapeType;
-import com.shape.app.shape.ViewProperties;
-import com.shape.app.shape.views.ShapeFactory;
-import com.shape.app.shape.views.ShapeView;
-import com.shape.app.shape.views.ViewPropertiesFactory;
+import com.shape.app.utils.ViewProperties;
+import com.shape.app.utils.ViewPropertiesFactory;
+import com.shape.app.shape.view.customshape.ShapeFactory;
+import com.shape.app.shape.view.customshape.ShapeView;
+import com.shape.app.shape.model.MainViewModel;
+import com.shape.app.shape.listener.UpdateEmptyView;
 import com.shape.app.undo.Undo;
 import com.shape.app.undo.UndoActions;
 import com.shape.app.utils.ShapeUtils;
@@ -218,7 +220,7 @@ public class ShapeContainerView extends FrameLayout implements OnTapEvent, OnLon
     /**
      * Resets the Last Shape Saved.
      */
-    protected void resetLastUndoAction() {
+    public void resetLastUndoAction() {
         undo.setViewTag(null);
         undo.setViewProperties(null);
     }

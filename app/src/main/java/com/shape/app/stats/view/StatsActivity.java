@@ -1,4 +1,4 @@
-package com.shape.app.ui.stats;
+package com.shape.app.stats.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,12 @@ import android.view.MenuItem;
 import com.shape.app.R;
 import com.shape.app.databinding.ActivityStatsBinding;
 import com.shape.app.shape.ShapeType;
-import com.shape.app.ui.BaseActivity;
-import com.shape.app.ui.shape.MainActivity;
+import com.shape.app.stats.listener.OnStatsTap;
+import com.shape.app.stats.adapter.StatsAdapter;
+import com.shape.app.stats.model.StatsItemViewModel;
+import com.shape.app.stats.model.StatsViewModel;
+import com.shape.app.basecomponents.BaseActivity;
+import com.shape.app.shape.view.MainActivity;
 
 import java.util.HashMap;
 

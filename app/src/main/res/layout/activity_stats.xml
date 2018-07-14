@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.shape.app.ui.stats.StatsActivity">
+    tools:context=".stats.view.StatsActivity">
 
     <data>
 
         <variable
             name="statsModel"
-            type="com.shape.app.ui.stats.StatsViewModel" />
+            type="com.shape.app.stats.model.StatsViewModel" />
 
     </data>
 

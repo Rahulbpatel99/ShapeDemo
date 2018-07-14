@@ -2,17 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.shape.app.ui.shape.MainActivity">
+    tools:context="com.shape.app.shape.view.MainActivity">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.shape.app.ui.shape.MainViewModel" />
+            type="com.shape.app.shape.model.MainViewModel" />
 
         <variable
             name="onTapEvent"
-            type="com.shape.app.shape.OnLongTapEvent" />
+            type="com.shape.app.shape.listener.OnLongTapEvent" />
 
     </data>
 
@@ -45,7 +45,7 @@
 
         </LinearLayout>
 
-        <com.shape.app.ui.shape.ShapeContainerView
+        <com.shape.app.shape.view.ShapeContainerView
             android:id="@+id/shapeContainer"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -57,7 +57,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <com.shape.app.shape.views.SquareView
+        <com.shape.app.shape.view.customshape.SquareView
             android:id="@+id/imageViewSquare"
             style="@style/ShapeInputImage"
             android:layout_marginStart="32dp"
@@ -67,7 +67,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <com.shape.app.shape.views.CircleView
+        <com.shape.app.shape.view.customshape.CircleView
             android:id="@+id/imageViewCircle"
             style="@style/ShapeInputImage"
             android:layout_marginStart="8dp"
@@ -78,7 +78,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <com.shape.app.shape.views.TriangleView
+        <com.shape.app.shape.view.customshape.TriangleView
             android:id="@+id/imageViewTriangle"
             style="@style/ShapeInputImage"
             android:layout_marginEnd="32dp"

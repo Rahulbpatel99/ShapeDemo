@@ -1,9 +1,9 @@
-package com.shape.app.shape.views;
+package com.shape.app.shape.view.customshape;
 
 import android.content.Context;
 import android.graphics.Color;
 
-import com.shape.app.shape.ViewProperties;
+import com.shape.app.utils.ViewProperties;
 
 /**
  * Generates the ShapeView Depending on the {@link com.shape.app.shape.ShapeType}

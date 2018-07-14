@@ -1,4 +1,4 @@
-package com.shape.app.ui.stats;
+package com.shape.app.stats.listener;
 
 /**
  * Handles the OnClick Events of the Stats Row

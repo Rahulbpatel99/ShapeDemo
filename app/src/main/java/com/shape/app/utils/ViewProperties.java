@@ -1,7 +1,9 @@
-package com.shape.app.shape;
+package com.shape.app.utils;
 
 import android.graphics.Point;
 import android.support.annotation.NonNull;
+
+import com.shape.app.shape.ShapeType;
 
 /**
  * This class holds the Properties of a view.
@@ -13,10 +15,7 @@ public class ViewProperties {
     private Point viewCoordinates;
     private int viewColor;
     private String viewTag;
-
-    public ViewProperties() {
-    }
-
+    
     private ViewProperties(final ViewPropertiesBuilder builder) {
         this.shapeType = builder.shapeType;
         this.viewWidth = builder.viewWidth;

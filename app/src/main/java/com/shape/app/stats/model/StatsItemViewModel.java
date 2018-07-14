@@ -1,4 +1,4 @@
-package com.shape.app.ui.stats;
+package com.shape.app.stats.model;
 
 import android.content.Context;
 import android.databinding.BaseObservable;
@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 
 import com.shape.app.R;
 import com.shape.app.shape.ShapeType;
+import com.shape.app.stats.adapter.StatsAdapter;
 
 /**
  * ViewModel of @{@link StatsAdapter.StatsItemHolder}

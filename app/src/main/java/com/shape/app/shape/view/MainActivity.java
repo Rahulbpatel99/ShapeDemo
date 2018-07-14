@@ -1,4 +1,4 @@
-package com.shape.app.ui.shape;
+package com.shape.app.shape.view;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -10,11 +10,13 @@ import android.view.View;
 
 import com.shape.app.R;
 import com.shape.app.databinding.ActivityMainBinding;
-import com.shape.app.shape.OnTapEvent;
+import com.shape.app.shape.listener.OnTapEvent;
 import com.shape.app.shape.ShapeType;
-import com.shape.app.shape.views.ShapeView;
-import com.shape.app.ui.BaseActivity;
-import com.shape.app.ui.stats.StatsActivity;
+import com.shape.app.shape.view.customshape.ShapeView;
+import com.shape.app.basecomponents.BaseActivity;
+import com.shape.app.shape.model.MainViewModel;
+import com.shape.app.shape.listener.UpdateEmptyView;
+import com.shape.app.stats.view.StatsActivity;
 
 import java.util.HashMap;
 
@@ -80,7 +82,7 @@ public class MainActivity extends BaseActivity implements UpdateEmptyView, View.
     }
 
     /**
-     * Removes the shapes deleted by user in the {@link com.shape.app.ui.stats.StatsActivity}
+     * Removes the shapes deleted by user in the {@link StatsActivity}
      */
     public void clearShapes() {
         for (ShapeType deletedShape : viewModel.getShapeStatsMap().keySet()) {

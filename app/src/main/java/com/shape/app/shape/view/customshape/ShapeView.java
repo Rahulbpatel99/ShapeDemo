@@ -1,4 +1,4 @@
-package com.shape.app.shape.views;
+package com.shape.app.shape.view.customshape;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,10 +10,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.shape.app.R;
-import com.shape.app.shape.OnLongTapEvent;
-import com.shape.app.shape.OnTapEvent;
+import com.shape.app.shape.listener.OnLongTapEvent;
+import com.shape.app.shape.listener.OnTapEvent;
 import com.shape.app.shape.ShapeType;
-import com.shape.app.shape.ViewProperties;
+import com.shape.app.utils.ViewProperties;
 
 /**
  * This class draws Shape Objects with respect to User Inputs.

@@ -1,11 +1,11 @@
-package com.shape.app.shape.views;
+package com.shape.app.shape.view.customshape;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
-import com.shape.app.shape.ViewProperties;
+import com.shape.app.utils.ViewProperties;
 
 /**
  * This class draws a Circle.

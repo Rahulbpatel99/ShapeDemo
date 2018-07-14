@@ -1,4 +1,4 @@
-package com.shape.app.ui.shape;
+package com.shape.app.shape.model;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 
 import com.shape.app.BR;
 import com.shape.app.shape.ShapeType;
+import com.shape.app.shape.view.MainActivity;
 
 import java.util.HashMap;
 

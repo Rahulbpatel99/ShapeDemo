@@ -1,4 +1,4 @@
-package com.shape.app.ui.shape;
+package com.shape.app.shape.listener;
 
 /**
  * Handles the Empty view Visibility.

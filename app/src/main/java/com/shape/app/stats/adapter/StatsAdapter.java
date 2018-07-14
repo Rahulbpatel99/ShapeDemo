@@ -1,4 +1,4 @@
-package com.shape.app.ui.stats;
+package com.shape.app.stats.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.shape.app.R;
 import com.shape.app.databinding.RowStatsBinding;
+import com.shape.app.stats.model.StatsItemViewModel;
+import com.shape.app.stats.listener.OnStatsTap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +49,7 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsItemHol
     public class StatsItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         RowStatsBinding binding;
 
-        public StatsItemHolder(View itemView) {
+        private StatsItemHolder(View itemView) {
             super(itemView);
             binding = DataBindingUtil.bind(itemView);
             binding.imageViewDelete.setOnClickListener(this);
